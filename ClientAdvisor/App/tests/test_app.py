@@ -24,22 +24,17 @@ AZURE_COSMOSDB_ENABLE_FEEDBACK = True
 
 @pytest.fixture(autouse=True)
 def set_env_vars():
-    with patch("app.AZURE_OPENAI_PREVIEW_API_VERSION", "2024-02-15-preview"), patch(
-        "app.AZURE_OPENAI_ENDPOINT", "https://example.com/"
-    ), patch("app.AZURE_OPENAI_MODEL", "openai_model"), patch(
-        "app.CHAT_HISTORY_ENABLED", True
-    ), patch(
-        "app.AZURE_COSMOSDB_ACCOUNT", "test_account"
-    ), patch(
-        "app.AZURE_COSMOSDB_ACCOUNT_KEY", "test_key"
-    ), patch(
-        "app.AZURE_COSMOSDB_DATABASE", "test_database"
-    ), patch(
-        "app.AZURE_COSMOSDB_CONVERSATIONS_CONTAINER", "test_container"
-    ), patch(
-        "app.AZURE_COSMOSDB_ENABLE_FEEDBACK", True
-    ), patch(
-        "app.AZURE_OPENAI_KEY", "valid_key"
+    with (
+        patch("app.AZURE_OPENAI_PREVIEW_API_VERSION", "2024-02-15-preview"),
+        patch("app.AZURE_OPENAI_ENDPOINT", "https://example.com/"),
+        patch("app.AZURE_OPENAI_MODEL", "openai_model"),
+        patch("app.CHAT_HISTORY_ENABLED", True),
+        patch("app.AZURE_COSMOSDB_ACCOUNT", "test_account"),
+        patch("app.AZURE_COSMOSDB_ACCOUNT_KEY", "test_key"),
+        patch("app.AZURE_COSMOSDB_DATABASE", "test_database"),
+        patch("app.AZURE_COSMOSDB_CONVERSATIONS_CONTAINER", "test_container"),
+        patch("app.AZURE_COSMOSDB_ENABLE_FEEDBACK", True),
+        patch("app.AZURE_OPENAI_KEY", "valid_key"),
     ):
         yield
 
@@ -162,8 +157,9 @@ async def test_ensure_cosmos_exception(mock_init_cosmosdb_client, client):
 @pytest.mark.asyncio
 @patch("app.init_cosmosdb_client")
 async def test_ensure_cosmos_invalid_db_name(mock_init_cosmosdb_client, client):
-    with patch("app.AZURE_COSMOSDB_DATABASE", "your_db_name"), patch(
-        "app.AZURE_COSMOSDB_ACCOUNT", "your_account"
+    with (
+        patch("app.AZURE_COSMOSDB_DATABASE", "your_db_name"),
+        patch("app.AZURE_COSMOSDB_ACCOUNT", "your_account"),
     ):
         mock_init_cosmosdb_client.side_effect = Exception(
             "Invalid CosmosDB database name"
