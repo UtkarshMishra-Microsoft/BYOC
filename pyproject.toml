@@ -1,0 +1,13 @@
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+skip-string-normalization = true
+exclude = '''
+/(
+    \.git
+    | \.venv
+    | _pycache_
+    | migrations
+    | frontend
+)/
+'''

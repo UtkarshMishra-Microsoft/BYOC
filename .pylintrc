@@ -1,0 +1,8 @@
+[MASTER]
+python-version = 3.11
+ignore = .venv, tests, migrations
+disable = missing-docstring, invalid-name, too-many-arguments,parse-error
+max-line-length = 88
+
+[FORMAT]
+indent-string='    '

@@ -2,9 +2,14 @@ import json
 from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
-
-from app import (create_app, delete_all_conversations, generate_title,
-                 init_cosmosdb_client, init_openai_client, stream_chat_request)
+from app import (
+    create_app,
+    delete_all_conversations,
+    generate_title,
+    init_cosmosdb_client,
+    init_openai_client,
+    stream_chat_request,
+)
 
 # Constants for testing
 INVALID_API_VERSION = "2022-01-01"
@@ -500,7 +505,6 @@ async def test_rename_conversation(
     mock_request_headers,
     client,
 ):
-
     # Mocking authenticated user details
     mock_get_authenticated_user_details.return_value = {"user_principal_id": "user_123"}
 

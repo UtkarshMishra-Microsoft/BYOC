@@ -6,7 +6,6 @@ from azure.cosmos.aio import CosmosClient
 
 
 class CosmosConversationClient:
-
     def __init__(
         self,
         cosmosdb_endpoint: str,
