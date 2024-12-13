@@ -31,12 +31,12 @@ jobs:
       - name: Format with isort
         run: |
           echo "Running isort for the entire project..."
-          python -m isort . --profile=black
+          python -m isort . --profile=black --verbose
 
       - name: Format with Black
         run: |
           echo "Running Black for the entire project..."
-          python -m black .
+          python -m black . --verbose
 
       - name: Run Flake8
         run: |
@@ -48,4 +48,4 @@ jobs:
       - name: Run Pylint
         run: |
           echo "Running Pylint for the entire project..."
-          python -m pylint . --rcfile=.pylintrc
+          python -m pylint . --rcfile=.pylintrc --verbose
