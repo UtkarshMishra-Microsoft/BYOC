@@ -31,6 +31,7 @@ def get_secrets_from_kv(kv_name, secret_name):
 
 
 import json
+
 # Utils
 # Import required libraries
 import os
@@ -41,20 +42,38 @@ from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient, SearchIndexingBufferedSender
 from azure.search.documents.indexes import SearchIndexClient
 from azure.search.documents.indexes.models import (
-    ExhaustiveKnnAlgorithmConfiguration, ExhaustiveKnnParameters,
-    HnswAlgorithmConfiguration, HnswParameters, SearchableField, SearchField,
-    SearchFieldDataType, SearchIndex, SemanticConfiguration, SemanticField,
-    SemanticPrioritizedFields, SemanticSearch, SimpleField, VectorSearch,
-    VectorSearchAlgorithmConfiguration, VectorSearchAlgorithmKind,
-    VectorSearchAlgorithmMetric, VectorSearchProfile)
-from azure.search.documents.models import (QueryAnswerResult, QueryAnswerType,
-                                           QueryCaptionResult,
-                                           QueryCaptionType, QueryType,
-                                           SemanticErrorMode,
-                                           SemanticErrorReason,
-                                           SemanticSearchResultsType,
-                                           VectorFilterMode, VectorizedQuery,
-                                           VectorQuery)
+    ExhaustiveKnnAlgorithmConfiguration,
+    ExhaustiveKnnParameters,
+    HnswAlgorithmConfiguration,
+    HnswParameters,
+    SearchableField,
+    SearchField,
+    SearchFieldDataType,
+    SearchIndex,
+    SemanticConfiguration,
+    SemanticField,
+    SemanticPrioritizedFields,
+    SemanticSearch,
+    SimpleField,
+    VectorSearch,
+    VectorSearchAlgorithmConfiguration,
+    VectorSearchAlgorithmKind,
+    VectorSearchAlgorithmMetric,
+    VectorSearchProfile,
+)
+from azure.search.documents.models import (
+    QueryAnswerResult,
+    QueryAnswerType,
+    QueryCaptionResult,
+    QueryCaptionType,
+    QueryType,
+    SemanticErrorMode,
+    SemanticErrorReason,
+    SemanticSearchResultsType,
+    VectorFilterMode,
+    VectorizedQuery,
+    VectorQuery,
+)
 
 search_endpoint = get_secrets_from_kv(key_vault_name, "AZURE-SEARCH-ENDPOINT")
 search_key = get_secrets_from_kv(key_vault_name, "AZURE-SEARCH-KEY")
@@ -388,9 +407,11 @@ import pandas as pd
 import pypdf
 from azure.core.credentials import AzureKeyCredential
 from azure.identity import ClientSecretCredential
-from azure.storage.filedatalake import (DataLakeDirectoryClient,
-                                        DataLakeServiceClient,
-                                        FileSystemClient)
+from azure.storage.filedatalake import (
+    DataLakeDirectoryClient,
+    DataLakeServiceClient,
+    FileSystemClient,
+)
 
 account_name = get_secrets_from_kv(key_vault_name, "ADLS-ACCOUNT-NAME")
 credential = DefaultAzureCredential()

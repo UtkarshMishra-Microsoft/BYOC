@@ -44,17 +44,20 @@ from azure.core.credentials import AzureKeyCredential
 search_credential = AzureKeyCredential(search_key)
 
 from azure.search.documents.indexes import SearchIndexClient
-from azure.search.documents.indexes.models import (HnswAlgorithmConfiguration,
-                                                   SearchableField,
-                                                   SearchField,
-                                                   SearchFieldDataType,
-                                                   SearchIndex,
-                                                   SemanticConfiguration,
-                                                   SemanticField,
-                                                   SemanticPrioritizedFields,
-                                                   SemanticSearch, SimpleField,
-                                                   VectorSearch,
-                                                   VectorSearchProfile)
+from azure.search.documents.indexes.models import (
+    HnswAlgorithmConfiguration,
+    SearchableField,
+    SearchField,
+    SearchFieldDataType,
+    SearchIndex,
+    SemanticConfiguration,
+    SemanticField,
+    SemanticPrioritizedFields,
+    SemanticSearch,
+    SimpleField,
+    VectorSearch,
+    VectorSearchProfile,
+)
 
 # Create a search index
 index_client = SearchIndexClient(endpoint=search_endpoint, credential=search_credential)
@@ -188,9 +191,11 @@ import time
 
 import pandas as pd
 from azure.search.documents import SearchClient
-from azure.storage.filedatalake import (DataLakeDirectoryClient,
-                                        DataLakeServiceClient,
-                                        FileSystemClient)
+from azure.storage.filedatalake import (
+    DataLakeDirectoryClient,
+    DataLakeServiceClient,
+    FileSystemClient,
+)
 
 # foldername = 'clienttranscripts'
 # path_name = f'Data/{foldername}/meeting_transcripts'

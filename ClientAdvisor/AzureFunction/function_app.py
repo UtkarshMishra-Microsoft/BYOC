@@ -6,12 +6,14 @@ import azure.functions as func
 import openai
 import pymssql
 from azurefunctions.extensions.http.fastapi import Request, StreamingResponse
-from semantic_kernel.connectors.ai.function_call_behavior import \
-    FunctionCallBehavior
-from semantic_kernel.connectors.ai.open_ai import (AzureChatCompletion,
-                                                   OpenAIChatCompletion)
-from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.open_ai_prompt_execution_settings import \
-    OpenAIChatPromptExecutionSettings
+from semantic_kernel.connectors.ai.function_call_behavior import FunctionCallBehavior
+from semantic_kernel.connectors.ai.open_ai import (
+    AzureChatCompletion,
+    OpenAIChatCompletion,
+)
+from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.open_ai_prompt_execution_settings import (
+    OpenAIChatPromptExecutionSettings,
+)
 from semantic_kernel.contents.chat_history import ChatHistory
 from semantic_kernel.contents.function_call_content import FunctionCallContent
 from semantic_kernel.core_plugins.time_plugin import TimePlugin

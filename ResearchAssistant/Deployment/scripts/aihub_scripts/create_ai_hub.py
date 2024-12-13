@@ -2,8 +2,13 @@
 key_vault_name = "kv_to-be-replaced"
 
 from azure.ai.ml import MLClient
-from azure.ai.ml.entities import (ApiKeyConfiguration, AzureAISearchConnection,
-                                  AzureOpenAIConnection, Hub, Project)
+from azure.ai.ml.entities import (
+    ApiKeyConfiguration,
+    AzureAISearchConnection,
+    AzureOpenAIConnection,
+    Hub,
+    Project,
+)
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
