@@ -24,7 +24,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install black isort flake8 pylint -r requirements.txt
+          python -m pip install black isort flake8 pylint
+          python -m pip install -r ClientAdvisor/App/requirements.txt
+          python -m pip install -r ResearchAssistant/App/requirements.txt
 
       - name: Format with isort
         run: |
@@ -38,12 +40,12 @@ jobs:
 
       - name: Run Flake8
         run: |
-          echo "Running Flake8 for the entire project..."
-          python -m flake8 --config=ClientAdvisor\App\.flake8 ClientAdvisor/App
-          python -m flake8 --config=ResearchAssistant\App\.flake8 ResearchAssistant/App
+          echo "Running Flake8 for Client Advisor..."
+          python -m flake8 --config=ClientAdvisor/App/.flake8 ClientAdvisor/App --verbose
+          echo "Running Flake8 for Research Assistant..."
+          python -m flake8 --config=ResearchAssistant/App/.flake8 ResearchAssistant/App --verbose
 
       - name: Run Pylint
         run: |
           echo "Running Pylint for the entire project..."
           python -m pylint . --rcfile=.pylintrc
-
