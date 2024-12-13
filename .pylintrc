@@ -1,8 +1,28 @@
 [MASTER]
-python-version = 3.11
-ignore = .venv, tests, migrations
-disable = missing-docstring, invalid-name, too-many-arguments,parse-error
-max-line-length = 88
+ignore=__pycache__, migrations, .venv, frontend
+
+jobs = 1
+py-version = 3.11
+
+[MESSAGES CONTROL]
+
+disable=parse-error,missing-docstring,too-many-arguments,line-too-long,duplicate-code
+
+
+[REPORTS]
+reports = no
+score = no
 
 [FORMAT]
-indent-string='    '
+max-line-length = 100
+indent-string = '    '
+
+[VARIABLES]
+dummy-variables-rgx = |dummy|ignored|unused
+
+[TYPECHECK]
+ignored-classes = optparse.Values,thread._local,_thread._local,argparse.Namespace
+
+[IMPORTS]
+known-standard-library = sys,os,datetime
+known-third-party = pandas,azure
