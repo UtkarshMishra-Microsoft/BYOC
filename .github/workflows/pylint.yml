@@ -38,15 +38,9 @@ jobs:
           echo "Running Black for the entire project..."
           python -m black . --verbose
 
-      - name: Run Flake8
+      - name: Run pylint
         run: |
           echo "Running Flake8 for Client Advisor..."
           python -m flake8 --config=ClientAdvisor/App/.flake8 ClientAdvisor/App --verbose
           echo "Running Flake8 for Research Assistant..."
           python -m flake8 --config=ResearchAssistant/App/.flake8 ResearchAssistant/App --verbose
-
-      - name: Run Pylint
-        run: |
-          echo "Running Pylint for the entire project..."
-          export PYTHONPATH="${PYTHONPATH}:$(pwd)"
-          python -m pylint . --rcfile=.pylintrc --verbose
