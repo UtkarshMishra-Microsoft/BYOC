@@ -31,7 +31,7 @@ jobs:
       - name: Format with isort
         run: |
           echo "Running isort for the entire project..."
-          python -m isort . --profile=black --verbose
+          python -m isort . --profile black --verbose
 
       - name: Format with Black
         run: |
@@ -48,4 +48,5 @@ jobs:
       - name: Run Pylint
         run: |
           echo "Running Pylint for the entire project..."
+          export PYTHONPATH="${PYTHONPATH}:$(pwd)"
           python -m pylint . --rcfile=.pylintrc --verbose
