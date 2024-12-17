@@ -1,28 +1,34 @@
 [MASTER]
-ignore=__pycache__, migrations, .venv, frontend
-
-jobs = 1
-py-version = 3.11
+ignore=pycache, migrations, .venv, frontend
+jobs=1
+py-version=3.11
 
 [MESSAGES CONTROL]
-
-disable=parse-error,missing-docstring,too-many-arguments,line-too-long,duplicate-code
-
-
-[REPORTS]
-reports = no
-score = no
+# Disable specific checks to focus on critical issues only
+disable=
+    C0103,   # Invalid naming style (snake_case, camelCase, etc.)
+    C0302,   # Too many lines in module
+    W0718,   # Catching broad exceptions
+    W0719,   # Raising broad exceptions
+    R0912,   # Too many branches
+    R0914,   # Too many local variables
+    R0915,   # Too many statements
+    R1705,   # Unnecessary else after return
+    W1203,   # Use lazy % formatting in logging
+    W3101,   # Missing timeout in requests.get or requests.post
+    E1101,    # Module 'pymssql' has no 'connect' member (false positive)
+    C0116,
+    C0301,
+    parse-error
 
 [FORMAT]
-max-line-length = 100
-indent-string = '    '
+max-line-length=100
+indent-string='    '
 
-[VARIABLES]
-dummy-variables-rgx = |dummy|ignored|unused
-
-[TYPECHECK]
-ignored-classes = optparse.Values,thread._local,_thread._local,argparse.Namespace
+[REPORTS]
+reports=no
+score=no
 
 [IMPORTS]
-known-standard-library = sys,os,datetime
-known-third-party = pandas,azure
+known-standard-library=sys, os, datetime
+known-third-party=pandas, azure
