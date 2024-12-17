@@ -47,5 +47,8 @@ jobs:
 
       - name: Run Pylint
         run: |
-          echo "Running Pylint for the entire project..."
-          python -m pylint . --rcfile=.pylintrc --verbose
+          echo "Running Pylint for Client Advisor..."
+          export PYTHONPATH="${PYTHONPATH}:ClientAdvisor/App:ResearchAssistant/App"
+          python -m pylint ClientAdvisor/App --rcfile=.pylintrc --verbose
+          echo "Running Pylint for Research Assistant..."
+          python -m pylint ResearchAssistant/App --rcfile=.pylintrc --verbose
