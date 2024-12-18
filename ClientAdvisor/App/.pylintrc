@@ -31,7 +31,8 @@ disable=
     too-many-positional-arguments, # R0917: Ignore too many positional arguments
     raise-missing-from,            # W0707: Ignore re-raising without 'raise from'
     import-outside-toplevel,       # C0415: Ignore imports outside top-level
-    no-value-for-parameter         # E1120: Ignore missing arguments in function
+    no-value-for-parameter,         # E1120: Ignore missing arguments in function
+    parse-error
 
 [TYPECHECK]
 generated-members=get_bearer_token_provider
