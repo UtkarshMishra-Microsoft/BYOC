@@ -3,36 +3,36 @@ ignore=tests,.venv, frontend  ; Ignore the tests folder globally.
 
 [MESSAGES CONTROL]
 disable=
-    invalid-name,                  # C0103: Ignore naming style errors
-    line-too-long,                 # C0301: Ignore long lines
-    missing-function-docstring,    # C0116: Ignore missing function docstrings
-    missing-class-docstring,       # C0115: Ignore missing class docstrings
-    missing-module-docstring,      # C0114: Ignore missing module docstrings
-    redefined-outer-name,          # W0621: Ignore redefined variables warnings
-    broad-exception-raised,        # W0719: Ignore broad exception raised warnings
-    broad-exception-caught,        # W0718: Ignore broad exception caught warnings
-    too-many-arguments,            # R0913: Ignore too many arguments
-    too-many-locals,               # R0914: Ignore too many local variables
-    too-many-return-statements,    # R0911: Ignore too many return statements
-    too-many-branches,             # R0912: Ignore too many branches
-    unused-argument,               # W0613: Ignore unused arguments
-    unspecified-encoding,          # W1514: Ignore unspecified encoding in open()
-    logging-fstring-interpolation, # W1203: Ignore lazy f-string interpolation
-    missing-timeout,               # W3101: Ignore missing timeout in requests.get
-    no-else-return,                # R1705: Ignore unnecessary 'else' after return
-    redefined-builtin,             # W0622: Ignore redefining built-ins
-    global-statement,              # W0603: Ignore global statement usage
-    no-name-in-module,             # E0611: Ignore unresolved module names
-    no-member,                     # E1101: Ignore module has no 'member'
-    pointless-string-statement,    # W0105: Ignore pointless string statements
-    unnecessary-comprehension,     # R1721: Ignore unnecessary comprehensions
-    fixme,                         # W0511: Ignore TODO comments
-    too-many-instance-attributes,  # R0902: Ignore too many attributes in class
-    too-many-positional-arguments, # R0917: Ignore too many positional arguments
-    raise-missing-from,            # W0707: Ignore re-raising without 'raise from'
-    import-outside-toplevel,       # C0415: Ignore imports outside top-level
-    no-value-for-parameter,         # E1120: Ignore missing arguments in function
-    parse-error
+    invalid-name,                  
+    line-too-long,                 
+    missing-function-docstring,    
+    missing-class-docstring,       
+    missing-module-docstring,      
+    redefined-outer-name,          
+    broad-exception-raised,        
+    broad-exception-caught,        
+    too-many-arguments,            
+    too-many-locals,               
+    too-many-return-statements,    
+    too-many-branches,             
+    unused-argument,               
+    unspecified-encoding,          
+    logging-fstring-interpolation, 
+    missing-timeout,               
+    no-else-return,                
+    redefined-builtin,             
+    global-statement,              
+    no-name-in-module,             
+    no-member,                     
+    pointless-string-statement,    
+    unnecessary-comprehension,     
+    fixme,                         
+    too-many-instance-attributes, 
+    too-many-positional-arguments,                         
+    raise-missing-from,            
+    import-outside-toplevel,       
+    no-value-for-parameter,        
+    parse-error                    
 
 [TYPECHECK]
 generated-members=get_bearer_token_provider
