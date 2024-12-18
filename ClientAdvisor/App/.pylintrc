@@ -1,5 +1,5 @@
 [MASTER]
-ignore=tests  ; Ignore the tests folder globally.
+ignore=tests,.venv, frontend  ; Ignore the tests folder globally.
 
 [MESSAGES CONTROL]
 disable=
