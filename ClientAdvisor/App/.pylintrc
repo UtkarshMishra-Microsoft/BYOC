@@ -28,7 +28,7 @@ disable=
     unnecessary-comprehension,     
     fixme,                         
     too-many-instance-attributes, 
-    too-many-positional-arguments,                         
+    # too-many-positional-arguments,                         
     raise-missing-from,            
     import-outside-toplevel,       
     no-value-for-parameter,        
