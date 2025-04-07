@@ -15,7 +15,7 @@ User story
 
 This solution accelerator is a powerful tool that helps you create your own AI assistants. The accelerator can be used by any customer looking for reusable architecture and code snippets to build AI assistants with their own enterprise data. 
 
-It leverages Azure Open AI Service, Azure AI Search and Microsoft Fabric, to identify relevant documents, summarize and categorize vast amounts of unstructured information, and accelerate the overall document review and content generation process. 
+It leverages Azure OpenAI Service, Azure AI Search and Microsoft Fabric, to identify relevant documents, summarize and categorize vast amounts of unstructured information, and accelerate the overall document review and content generation process. 
 
 **Scenario**
 
@@ -45,14 +45,14 @@ quick deploy
 
 ### Prerequisites
 
-To use this solution accelerator, you will need access to an [Azure subscription](https://azure.microsoft.com/free/) with permission to create resource groups and resources. While not required, a prior understanding of Azure Open AI, Azure AI Search and Microsoft Fabric will be helpful.
+To use this solution accelerator, you will need access to an [Azure subscription](https://azure.microsoft.com/free/) with permission to create resource groups and resources. While not required, a prior understanding of Azure OpenAI, Azure AI Search and Microsoft Fabric will be helpful.
 
 For additional training and support, please see:
 
-1. [Azure Open AI](https://learn.microsoft.com/en-us/azure/ai-services/openai/) 
+1. [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/) 
 2. [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/) 
 3. [Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/) 
-4. [Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/) 
+4. [Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/) 
 
 ### Solution accelerator architecture
 ![image](Deployment/images/readMe/architecture.png)
@@ -64,7 +64,7 @@ For additional training and support, please see:
 ### **How to install/deploy**
 
 1. Please check the link [Azure Products by Region](
-https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/?products=all&regions=all) and choose a region where Azure AI Search, Semantic Ranker, Azure OpenAI Service, and Azure AI Studio are available. 
+https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/?products=all&regions=all) and choose a region where Azure AI Search, Semantic Ranker, Azure OpenAI Service, and Azure AI Foundry are available. 
 
 2. Click the following deployment button to create the required resources for this accelerator in your Azure Subscription.
 
@@ -74,9 +74,9 @@ https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-regi
 
    ![image](Deployment/images/readMe/armDeployment.png)
 
-4. When Deployment is complete, follow steps in [AI Studio Deployment guide](./Deployment/AIStudioDeployment.md) to configure the grant draft proposal endpoint.
+4. When Deployment is complete, follow steps in [AI Foundry Deployment guide](./Deployment/AIFoundryDeployment.md) to configure the grant draft proposal endpoint.
 
-5. When AI Studio deployment is complete, launch the application by navigating to your Azure resource group, choosing the app service resource, and clicking on the default domain. You should bookmark this URL to have quick access to your deployed application.
+5. When AI Foundry deployment is complete, launch the application by navigating to your Azure resource group, choosing the app service resource, and clicking on the default domain. You should bookmark this URL to have quick access to your deployed application.
 
 The next steps are optional for additional learning. Not required to deploy the solution and run the Grant Writer Assistant.
 
