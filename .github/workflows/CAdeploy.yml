@@ -74,7 +74,7 @@ jobs:
       - name: Install Bicep CLI
         run: az bicep install
 
-      - name: Generate Resource Group Name
+      - name: Generate resource Group Name
         id: generate_rg_name
         run: |
           echo "Generating a unique resource group name..."
