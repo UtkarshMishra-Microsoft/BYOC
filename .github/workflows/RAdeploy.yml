@@ -150,22 +150,22 @@ jobs:
           fi
           
       - name: Delete Bicep Deployment
-        if: success()
+        if: always()
         run: |
           set -e  
           echo "Checking if resource group exists..."
           rg_exists=$(az group exists --name ${{ env.RESOURCE_GROUP_NAME }})
           if [ "$rg_exists" = "true" ]; then
-            echo "Resource group exist. Cleaning..."
-            az group delete \
-                --name ${{ env.RESOURCE_GROUP_NAME }} \
-                --yes \
-                --no-wait
-            echo "Resource group deleted...  ${{ env.RESOURCE_GROUP_NAME }}"
+            echo "Resource group exists. Cleaning..."
+            az group delete --name ${{ env.RESOURCE_GROUP_NAME }} --yes --no-wait
+            echo "Initiated deletion of resource group: ${{ env.RESOURCE_GROUP_NAME }}"
+            echo "Waiting for resource group deletion to complete..."
+            az group wait --deleted --name ${{ env.RESOURCE_GROUP_NAME }}
+            echo "Resource group deletion completed: ${{ env.RESOURCE_GROUP_NAME }}"
           else
-            echo "Resource group does not exists."
+            echo "Resource group does not exist."
           fi
-
+  
       - name: Wait for resource deletion to complete
         run: |
 
@@ -226,7 +226,7 @@ jobs:
           done
 
       - name: Purging the Resources
-        if: success()
+        if: always()
         run: |
 
           set -e 
