@@ -29,10 +29,10 @@ jobs:
           export TEXT_EMBEDDING_MIN_CAPACITY="45"
           export AZURE_REGIONS="${{ vars.AZURE_REGIONS_CA }}"
 
-          chmod +x ClientAdvisor/Deployment/scripts/checkquota.sh
-          if ! ClientAdvisor/Deployment/scripts/checkquota.sh; then
+          chmod +x Build-your-own-copilot-Solution-Accelerator/blob/dev/infra/scripts/checkquota.sh
+          if ! Build-your-own-copilot-Solution-Accelerator/blob/dev/infra/scripts/checkquota.sh; then
             # If quota check fails due to insufficient quota, set the flag
-            if grep -q "No region with sufficient quota found" ClientAdvisor/Deployment/scripts/checkquota.sh; then
+            if grep -q "No region with sufficient quota found" Build-your-own-copilot-Solution-Accelerator/blob/dev/infra/scripts/checkquota.sh; then
               echo "QUOTA_FAILED=true" >> $GITHUB_ENV
             fi
             exit 1  # Fail the pipeline if any other failure occurs
@@ -117,7 +117,7 @@ jobs:
           set -e
           az deployment group create \
             --resource-group ${{ env.RESOURCE_GROUP_NAME }} \
-            --template-file ClientAdvisor/Deployment/bicep/main.bicep \
+            --template-file Build-your-own-copilot-Solution-Accelerator/blob/dev/infra/bicep/main.bicep \
             --parameters solutionPrefix=${{ env.SOLUTION_PREFIX }} cosmosLocation=${{ env.AZURE_LOCATION }}
 
       - name: List KeyVaults and Store in Array
